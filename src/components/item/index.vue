@@ -1,10 +1,10 @@
 <template>
   <view class="ht-main">
     <view class="ht-main__header">
-      <view class="ht-main__header--tag">
+      <view>
 
       </view>
-      <text class="ht-main__header--text">
+      <text>
         {{ title }}
       </text>
     </view>
@@ -12,7 +12,7 @@
       <u-image src="@/assets/images/2.jpg" mode="widthFix"></u-image>
       <view class="ht-main__content">
         <u-icon size="28" name="https://chen-1302611521.cos.ap-nanjing.myqcloud.com/phone.png" class="icon"></u-icon>
-        <text class="ht-main__content--phone">
+        <text>
           电话：{{ phone }}
         </text>
         <button class="ht-main__btn" type="default" size="mini" @click="consultNow(phone)">咨询</button>
@@ -47,18 +47,18 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 32rpx;
-    @include modifier(text) { // ==> .ht-main__header--text
+    text{
       font-size: 32rpx;
       font-weight: bold;
     }
-    @include modifier(tag) { // ==> .ht-main__header--tag
+    view{
       width: 8rpx;
       height: 28rpx;
       background: #5F9F76;
       border-radius: 6rpx;
       margin-right: 24rpx;
     }
-    @include state(selected){// ==> .item-main__tag  is-selected
+    @include state(selected){// ==> .ht-main__tag  is-selected
       color: #333333;
     }
 
@@ -69,7 +69,7 @@ export default {
     align-items: center;
     font-size: 32rpx;
     margin-top: 24rpx;
-    @include modifier(phone){
+    text{
       margin: 0 20rpx 0 8rpx;
     }
   }

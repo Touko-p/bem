@@ -1,6 +1,6 @@
 <template>
   <view class="ht-bar">
-    <button class="ht-bar__button is-nactive" type="default" @click="consultNow">立即咨询</button>
+    <button class="ht-bar__button" type="default" @click="consultNow">立即咨询</button>
     <button class="ht-bar__button is-active" type="default">获取更多</button>
   </view>
 </template>
@@ -34,13 +34,11 @@ $primary:#5F9F76;
     width: 320rpx;
     height: 72rpx;
     line-height: 72rpx;
+    color: $primary;
+    border:2rpx solid $primary;
     @include state(active){
       background:$primary ;
-      color: #fff;
-    }
-    @include state(nactive){
-      color: $primary;
-      border:2rpx solid $primary;
+      color: #fff !important;
     }
   }
 }
