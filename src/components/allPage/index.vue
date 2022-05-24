@@ -1,6 +1,6 @@
 <template>
   <view :class="showBar ? 'bar_show' : 'bar_hidden'">
-    <view class="header">
+    <view>
       <u-image src="@/assets/images/2.jpg" mode="widthFix"></u-image>
     </view>
     <slot></slot>

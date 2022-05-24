@@ -1,6 +1,6 @@
 <template>
-  <view class="info">
-    <view class="info_title">
+  <view class="ht-main">
+    <view class="ht-main__title">
       {{ title }}
     </view>
     <u-image src="@/assets/images/2.jpg" mode="widthFix"></u-image>
@@ -17,9 +17,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.info{
+@import "../../assets/scss/bem.scss";
+@include block(main){
   margin-bottom: 32rpx;
-  .info_title{
+  @include element(title){
     font-size: 30rpx;
     margin-bottom: 16rpx;
   }

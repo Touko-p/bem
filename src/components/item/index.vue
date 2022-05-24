@@ -1,21 +1,21 @@
 <template>
-  <view class="item">
-    <view class="item_header">
-      <view class="item_header_tag">
+  <view class="ht-main">
+    <view class="ht-main__header">
+      <view class="ht-main__header--tag">
 
       </view>
-      <text class="item_header_text">
+      <text class="ht-main__header--text">
         {{ title }}
       </text>
     </view>
     <slot>
       <u-image src="@/assets/images/2.jpg" mode="widthFix"></u-image>
-      <view class="item_connect">
+      <view class="ht-main__content">
         <u-icon size="28" name="https://chen-1302611521.cos.ap-nanjing.myqcloud.com/phone.png" class="icon"></u-icon>
-        <text class="item_connect_phone">
+        <text class="ht-main__content--phone">
           电话：{{ phone }}
         </text>
-        <button class="mini-btn" type="default" size="mini" @click="consultNow(phone)">咨询</button>
+        <button class="ht-main__btn" type="default" size="mini" @click="consultNow(phone)">咨询</button>
       </view>
     </slot>
   </view>
@@ -40,61 +40,43 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../assets/scss/bem.scss";
-$namespace:"item";
 
-@include block(main){ //==> .item-header
-  color: red;
-
-  @include element(tag){ // ==> .item-header__tag
-    width: 100px;
-    height: 100px;
-    background-color: #4cd964;
-    @include modifier(app) { // ==> .item-header__tag--app
-
-    }
-    @include modifier(web) { // ==> .item-header__tag--web
-
-    }
-    @include state(selected){// ==> .item-main__tag  is-selected
-      color: #333333;
-    }
-
-  }
-
-}
-
-.item{
+@include block(main){ //==> .ht-main
   margin-bottom: 24rpx;
-  .item_header{
+  @include element(header){ // ==> .ht-main__header
     display: flex;
     align-items: center;
     margin-bottom: 32rpx;
-    .item_header_tag{
+    @include modifier(text) { // ==> .ht-main__header--text
+      font-size: 32rpx;
+      font-weight: bold;
+    }
+    @include modifier(tag) { // ==> .ht-main__header--tag
       width: 8rpx;
       height: 28rpx;
       background: #5F9F76;
       border-radius: 6rpx;
       margin-right: 24rpx;
     }
-    .item_header_text{
-      font-size: 32rpx;
-      font-weight: bold;
+    @include state(selected){// ==> .item-main__tag  is-selected
+      color: #333333;
     }
+
   }
-  .item_connect{
+  @include element(content){
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 32rpx;
     margin-top: 24rpx;
-    .item_connect_phone{
+    @include modifier(phone){
       margin: 0 20rpx 0 8rpx;
     }
   }
-}
-.mini-btn{
-  background: #FF8504;
-  color: #fff;
-  margin: 0;
+  @include element(btn){
+    background: #FF8504;
+    color: #fff;
+    margin: 0;
+  }
 }
 </style>

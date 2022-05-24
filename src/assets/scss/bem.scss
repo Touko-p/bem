@@ -2,6 +2,8 @@ $element-separator: "__";
 $modifier-separator: "--";
 $state-prefix: "is-";
 
+$namespace:"ht";
+
 @mixin block($block) {
 	$B: $namespace + "-" + $block !global;
 	.#{$B} {
